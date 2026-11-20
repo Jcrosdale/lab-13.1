@@ -14,14 +14,20 @@ const port = 3001;
 const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri);
 
-// Create a single GET route at / that, upon a successful database connection, sends back a JSON response: { message: "Successfully connected to the database!" }. If the connection fails, it should send a 500 status code with a message: { message: "Failed to connect to the database." }.
+// Create a single GET route at / that, upon a successful database connection  If the connection fails, it should send a 500 status code with a message: { message: "Failed to connect to the database." }.
 app.get("/", async (req, res) => {
     try {
         await client.connect();
-    } catch (error) {
         
+        // Sends back a JSON response: { message: "Successfully connected to the database!" }.
+        res.json({
+            message: "Successfully connected to the database!"
+        });
+
+    } catch (error) {
+
     }
-    res.send("Successfully connected to the database!")
+    
 })
 // Load environment variables from the .env file.
 // Start the server
