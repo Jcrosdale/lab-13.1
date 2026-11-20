@@ -1,7 +1,7 @@
 // In server.js, build a simple Express application that connects to your MongoDB database. The server should:
 // Require express, mongodb, and dotenv.
 import express from 'express';
-import { MongoClient } from 'mogodb';
+import { MongoClient } from 'mongodb';
 // Load environment variables from the .env file.
 import 'dotenv/config';
 // Create an Express app instance.
