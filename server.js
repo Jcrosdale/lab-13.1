@@ -26,6 +26,7 @@ app.get("/", async (req, res) => {
 
     } catch (error) {
         // If the connection fails, it should send a 500 status code with a message: { message: "Failed to connect to the database." }.
+        //console.error("DB Error", error)
         res.status(500).json({
             message: "Failed to connect to the database."
         });
